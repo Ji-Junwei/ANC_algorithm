@@ -1,15 +1,21 @@
 # ANC_algorithm
-The conventional ANC algorithm including single channel FxLMS and multiple channel FxLMS
+Conventional ANC algorithms including single-channel FxLMS and multichannel
+FxLMS, with parallel MATLAB and Python implementations.
 
-## File
--- ANC_algorithm.m: The single channel FxLMS algorithm
+## Repository structure
 
--- ANC.m: Single channel FxLMS algorithm test script
+- `MATLAB version/`: original MATLAB implementation.
+- `python version/`: MATLAB-oriented NumPy/SciPy translation plus optional
+  PyTorch/CUDA multichannel extensions.
 
--- McANC_SRMSE.m: Multichannel ANC (1 x K x M) with single reference, multiple secondary sources and error sensors (SRMSE); 1 reference, K secondary sources, M error sensors; MEFxLMS algorithm
+## Algorithms
 
--- MCANC_MEFxLMS.m: MEFxLMS algorithm test script
+- `ANC_algorithm`: single-channel FxLMS.
+- `McANC_SRMSE`: multichannel ANC (1 x K x M) with one reference, K secondary
+  sources, and M error sensors; MEFxLMS/SRMSE.
+- `MultiChannelFxLMS`: fully connected multichannel FxLMS with arbitrary
+  J references, K secondary sources, and M error sensors.
 
--- MultiChannelFxLMS.m: MCFxLMS fully connected with arbitrary channel [J(Ref) x K(Secondary sources) x M(Error)]
-
--- MCFxLMS_tst.m: MCFxLMS algorithm test script
+See [`python version/README.md`](python%20version/README.md) for Python
+dependencies, file mapping, run commands, tensor dimensions, tests, and CUDA
+notes.
